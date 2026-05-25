@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HAGA — Tinh túy từ đất mẹ. Sản phẩm thiên nhiên nguyên bản, bình yên như vùng quê xanh." />
+  <title>HAGA | Tinh Túy Từ Đất Mẹ</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              950: '#0f2419',
+              900: '#1a3c2a',
+              800: '#234d36',
+              700: '#2d5a3d',
+              600: '#3a6b4f',
+            },
+            sage: {
+              300: '#b8cfc0',
+              400: '#9bb8a4',
+              500: '#87a88a',
+              600: '#6d9276',
+            },
+            olive: { 500: '#6b7c4e', 600: '#556339' },
+            ivory: { 50: '#fdfcf9', 100: '#faf8f3', 200: '#f5f1e8' },
+            beige: { 200: '#e8e0d4', 300: '#d9cfc0', 400: '#c4b8a6' },
+            wood: { 400: '#c4a574', 500: '#a67c52', 600: '#8b5e3c', 700: '#6d4a2e' },
+            earth: { 400: '#d4894a', 500: '#c17f4a', 600: '#a66a3a' },
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 4px 24px rgba(26, 60, 42, 0.08)',
+            lift: '0 24px 48px rgba(26, 60, 42, 0.14)',
+            card: '0 8px 32px rgba(26, 60, 42, 0.1)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-sans text-forest-900 bg-ivory-100 antialiased overflow-x-hidden">
+
+  <!-- ═══════════════════ HEADER ═══════════════════ -->
+  <header id="site-header" class="site-header fixed inset-x-0 top-0 z-50">
+    <div class="header-inner max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-[72px] md:h-[84px]">
+
+        <!-- Logo -->
+        <a href="#trang-chu" class="logo-wrap flex items-center gap-3 shrink-0 group">
+          <img
+            src="./logo.jpg"
+            alt="HAGA"
+            width="52"
+            height="52"
+            class="logo-img w-[44px] h-[44px] md:w-[52px] md:h-[52px] object-cover rounded-xl ring-2 ring-white/30 group-hover:ring-wood-400/50 transition-all duration-300"
+          />
+          <span class="logo-text font-display text-xl md:text-2xl font-semibold tracking-wide hidden sm:block">HAGA</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden lg:flex items-center gap-10" aria-label="Điều hướng chính">
+          <a href="#trang-chu" class="nav-item" data-nav>Trang chủ</a>
+          <a href="#nguon-goc" class="nav-item" data-nav>Nguồn gốc thiên nhiên</a>
+          <a href="#san-pham" class="nav-item" data-nav>Sản phẩm</a>
+          <a href="#lien-he" class="nav-item" data-nav>Liên hệ</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-1 sm:gap-2">
+          <button type="button" id="btn-search" class="header-action" aria-label="Tìm kiếm">
+            <i class="fa-solid fa-magnifying-glass text-[17px]"></i>
+          </button>
+          <button type="button" id="btn-account" class="header-action hidden sm:flex" aria-label="Tài khoản">
+            <i class="fa-regular fa-user text-[17px]"></i>
+          </button>
+          <button type="button" id="btn-cart" class="header-action relative" aria-label="Giỏ hàng">
+            <i class="fa-solid fa-bag-shopping text-[17px]"></i>
+            <span id="cart-badge" class="cart-badge hidden">0</span>
+          </button>
+          <button type="button" id="btn-mobile-menu" class="header-action lg:hidden ml-1" aria-label="Menu" aria-expanded="false">
+            <i class="fa-solid fa-bars text-[18px]"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-drawer" class="mobile-drawer lg:hidden" aria-hidden="true">
+      <nav class="flex flex-col gap-1 p-5">
+        <a href="#trang-chu" class="mobile-nav-item" data-nav>Trang chủ</a>
+        <a href="#nguon-goc" class="mobile-nav-item" data-nav>Nguồn gốc thiên nhiên</a>
+        <a href="#san-pham" class="mobile-nav-item" data-nav>Sản phẩm</a>
+        <a href="#lien-he" class="mobile-nav-item" data-nav>Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="trang-chu" class="hero relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+      <div
+        class="hero-bg absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+        style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1920&auto=format&fit=crop');"
+        role="img"
+        aria-label="Đồi núi xanh mướt bát ngát"
+      ></div>
+      <div class="hero-overlay absolute inset-0"></div>
+      <div class="hero-grain absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 w-full max-w-[900px] mx-auto px-5 sm:px-8 text-center pt-28 pb-36 md:pt-32">
+        <p class="hero-eyebrow text-ivory-200/90 text-xs sm:text-sm font-medium tracking-[0.35em] uppercase mb-6 opacity-0 animate-rise" style="--delay: 0.1s">
+          Thiên nhiên nguyên bản · Vùng quê bình yên
+        </p>
+        <h1 class="font-display text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] font-semibold text-ivory-50 leading-[1.12] mb-7 opacity-0 animate-rise" style="--delay: 0.25s">
+          HAGA — Tinh Túy<br class="hidden sm:block" />
+          <span class="italic text-sage-300/95">Từ Đất Mẹ</span>
+        </h1>
+        <p class="text-ivory-100/85 text-base sm:text-lg md:text-xl leading-relaxed max-w-[640px] mx-auto mb-11 font-light opacity-0 animate-rise" style="--delay: 0.4s">
+          Giữa những ngọn đồi xanh, chúng tôi hái từng lá thảo mộc, từng giọt mật ong — mang đến sự trong lành và an yên như một buổi sáng ở quê.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-rise" style="--delay: 0.55s">
+          <a href="#san-pham" class="btn-primary">
+            Mua sắm ngay
+            <i class="fa-solid fa-arrow-right text-sm ml-1"></i>
+          </a>
+          <a href="#nguon-goc" class="btn-outline">
+            Tìm hiểu câu chuyện
+          </a>
+        </div>
+      </div>
+
+      <a href="#features" class="hero-scroll-hint absolute bottom-10 left-1/2 -translate-x-1/2 text-ivory-200/60 hover:text-ivory-50 transition-colors" aria-label="Cuộn xuống">
+        <span class="block w-px h-12 bg-gradient-to-b from-transparent via-ivory-200/50 to-ivory-200/80 mx-auto mb-2"></span>
+        <i class="fa-solid fa-chevron-down text-sm animate-pulse-soft"></i>
+      </a>
+    </section>
+
+    <!-- ═══════════════════ FEATURES (floating cards) ═══════════════════ -->
+    <section id="features" class="features-section relative z-20 -mt-20 md:-mt-28 pb-16 md:pb-24">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
+          <article class="feature-card opacity-0 animate-rise" style="--delay: 0.1s">
+            <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h3 class="font-display text-lg font-semibold text-forest-800 mb-1.5">100% Thảo Mộc</h3>
+            <p class="text-forest-700/70 text-sm leading-relaxed">Nguyên liệu thuần khiết, không hóa chất, không biến đổi gen.</p>
+          </article>
+          <article class="feature-card opacity-0 animate-rise" style="--delay: 0.2s">
+            <div class="feature-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+            <h3 class="font-display text-lg font-semibold text-forest-800 mb-1.5">Quy Trình Thủ Công</h3>
+            <p class="text-forest-700/70 text-sm leading-relaxed">Chế biến tỉ mỉ bởi bàn tay nghệ nhân địa phương.</p>
+          </article>
+          <article class="feature-card opacity-0 animate-rise" style="--delay: 0.3s">
+            <div class="feature-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3 class="font-display text-lg font-semibold text-forest-800 mb-1.5">Thân Thiện Môi Trường</h3>
+            <p class="text-forest-700/70 text-sm leading-relaxed">Bao bì tái chế, nông nghiệp bền vững, trồng cây mỗi đơn.</p>
+          </article>
+          <article class="feature-card opacity-0 animate-rise" style="--delay: 0.4s">
+            <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <h3 class="font-display text-lg font-semibold text-forest-800 mb-1.5">Giao Hàng Tận Nơi</h3>
+            <p class="text-forest-700/70 text-sm leading-relaxed">Giao nhanh toàn quốc, đóng gói cẩn thận giữ trọn hương vị.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ NGUỒN GỐC ═══════════════════ -->
+    <section id="nguon-goc" class="py-24 md:py-32 lg:py-40">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div class="origin-visual reveal-on-scroll relative rounded-3xl overflow-hidden shadow-lift aspect-[4/5] lg:aspect-auto lg:min-h-[560px]">
+            <img
+              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
+              alt="Rừng xanh và ánh sáng xuyên lá"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-950/70 via-forest-900/20 to-transparent"></div>
+            <blockquote class="absolute bottom-8 left-8 right-8 text-ivory-100 font-display text-xl md:text-2xl italic leading-snug">
+              "Mỗi sản phẩm là một mảnh đất, một mùa gió, một ký ức về quê."
+            </blockquote>
+          </div>
+          <div class="lg:py-6 reveal-on-scroll">
+            <span class="section-label">Nguồn gốc thiên nhiên</span>
+            <h2 class="section-title mt-3 mb-8">Hành trình từ đồi núi<br />đến tay bạn</h2>
+            <div class="space-y-5 text-forest-700/85 text-base md:text-lg leading-relaxed">
+              <p>
+                HAGA sinh ra giữa những thung lũng xanh — nơi sương sớm phủ trên lá trà, nơi ong bay qua những cánh đồng hoa dại. Chúng tôi không vội vàng; chúng tôi lắng nghe nhịp thở của đất.
+              </p>
+              <p>
+                Từng bước thu hái, sấy khô và đóng gói đều giữ trọn hương vị tự nhiên. Đó là lời hứa về sự bình yên mà bạn có thể cảm nhận mỗi ngày.
+              </p>
+            </div>
+            <ul class="mt-10 space-y-4">
+              <li class="origin-point"><i class="fa-solid fa-check"></i> Vùng trồng được chứng nhận hữu cơ</li>
+              <li class="origin-point"><i class="fa-solid fa-check"></i> Hợp tác trực tiếp với hộ nông dân địa phương</li>
+              <li class="origin-point"><i class="fa-solid fa-check"></i> Minh bạch từng khâu sản xuất</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ SẢN PHẨM ═══════════════════ -->
+    <section id="san-pham" class="py-24 md:py-32 lg:py-40 bg-ivory-50/80">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+          <span class="section-label">Bộ sưu tập</span>
+          <h2 class="section-title mt-3 mb-5">Sản phẩm nổi bật</h2>
+          <p class="text-forest-700/75 text-base md:text-lg leading-relaxed">
+            Tinh hoa thảo mộc và mỹ phẩm thiên nhiên — được yêu thích nhất từ cộng đồng HAGA.
+          </p>
+        </div>
+        <!-- Thanh tìm kiếm live (hiện khi bấm icon Tìm kiếm) -->
+        <div id="live-search-bar" class="live-search-bar hidden max-w-xl mx-auto mb-10" aria-hidden="true">
+          <div class="relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-sage-500"></i>
+            <input
+              id="live-search-input"
+              type="search"
+              class="live-search-input w-full"
+              placeholder="Tìm theo tên sản phẩm..."
+              autocomplete="off"
+            />
+            <button type="button" id="live-search-clear" class="live-search-clear hidden" aria-label="Xóa tìm kiếm">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 md:gap-8"></div>
+        <p id="no-products-msg" class="hidden text-center text-forest-700/60 py-12 text-lg">
+          <i class="fa-solid fa-leaf mr-2 text-sage-500"></i>Không tìm thấy sản phẩm phù hợp.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ NEWSLETTER STRIP ═══════════════════ -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="newsletter-strip rounded-3xl overflow-hidden relative px-8 py-14 md:px-16 md:py-20 text-center">
+          <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop');"></div>
+          <div class="relative z-10">
+            <h2 class="font-display text-2xl md:text-4xl text-ivory-50 font-semibold mb-4">Nhận ưu đãi từ vùng quê xanh</h2>
+            <p class="text-ivory-200/80 mb-8 max-w-md mx-auto">Đăng ký để nhận tin về sản phẩm mới và mã giảm giá độc quyền.</p>
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input type="email" required placeholder="Email của bạn" class="newsletter-input flex-1" />
+              <button type="submit" class="btn-primary shrink-0 justify-center">Đăng ký</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer id="lien-he" class="footer bg-forest-950 text-ivory-200/90">
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 py-20 md:py-24">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <a href="#trang-chu" class="inline-flex items-center gap-3 mb-6">
+            <img src="./logo.jpg" alt="HAGA" width="48" height="48" class="w-12 h-12 object-cover rounded-xl" />
+            <span class="font-display text-2xl text-ivory-50 font-semibold">HAGA</span>
+          </a>
+          <p class="text-sm leading-relaxed text-ivory-200/70 max-w-xs">
+            Thương hiệu sản phẩm thiên nhiên — mang bình yên từ đồi núi đến ngôi nhà bạn, với tình yêu dành cho đất và người.
+          </p>
+          <div class="flex gap-3 mt-8">
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="footer-social" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Liên kết nhanh</h4>
+          <ul class="footer-links">
+            <li><a href="#trang-chu">Trang chủ</a></li>
+            <li><a href="#nguon-goc">Nguồn gốc</a></li>
+            <li><a href="#san-pham">Sản phẩm</a></li>
+            <li><a href="#lien-he">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Hỗ trợ khách hàng</h4>
+          <ul class="footer-links">
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Vận chuyển &amp; giao hàng</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="tel:+84901234567">090 123 4567</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Đăng ký nhận tin</h4>
+          <p class="text-sm text-ivory-200/65 mb-4 leading-relaxed">Cập nhật ưu đãi và câu chuyện từ vùng quê mỗi tuần.</p>
+          <form id="footer-newsletter" class="flex flex-col gap-3">
+            <input type="email" required placeholder="Email" class="footer-input" />
+            <button type="submit" class="footer-submit">Gửi đăng ký</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom mt-16 pt-8 border-t border-ivory-200/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-ivory-200/50">
+        <p>&copy; 2026 HAGA. Tất cả quyền được bảo lưu.</p>
+        <p>Thiết kế với <i class="fa-solid fa-heart text-earth-400 text-xs mx-0.5"></i> từ thiên nhiên</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search modal (đồng bộ với live filter trên lưới sản phẩm) -->
+  <div id="search-modal" class="search-modal" aria-hidden="true" role="dialog" aria-label="Tìm kiếm">
+    <div class="search-modal-backdrop" data-close-search></div>
+    <div class="search-modal-panel">
+      <button type="button" class="search-close" data-close-search aria-label="Đóng"><i class="fa-solid fa-xmark"></i></button>
+      <label for="search-input" class="block text-sm font-medium text-forest-700 mb-2">Tìm sản phẩm</label>
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-sage-500"></i>
+        <input id="search-input" type="search" placeholder="Trà, mật ong, tinh dầu..." class="search-input w-full" />
+      </div>
+      <p class="text-xs text-forest-700/50 mt-3">Kết quả được lọc trực tiếp trên danh sách sản phẩm bên dưới.</p>
+    </div>
+  </div>
+
+  <!-- Cart drawer (offcanvas phải) -->
+  <div id="cart-drawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-label="Giỏ hàng">
+    <div id="cart-backdrop" class="cart-backdrop" aria-hidden="true"></div>
+    <aside class="cart-panel">
+      <div class="cart-panel-header">
+        <h2 class="font-display text-xl font-semibold text-forest-900">
+          <i class="fa-solid fa-bag-shopping mr-2 text-sage-600"></i>Giỏ hàng
+        </h2>
+        <button type="button" id="cart-close" class="cart-close-btn" aria-label="Đóng giỏ hàng">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div id="cart-items" class="cart-items flex-1 overflow-y-auto"></div>
+      <div class="cart-panel-footer">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-forest-700 font-medium">Tổng cộng</span>
+          <span id="cart-total" class="font-display text-xl font-semibold text-wood-600">0&nbsp;₫</span>
+        </div>
+        <button type="button" id="cart-checkout" class="cart-checkout-btn w-full">
+          Thanh toán
+        </button>
+        <button type="button" id="cart-continue" class="cart-continue-btn w-full mt-2">
+          Tiếp tục mua sắm
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Auth modal (Đăng nhập / Đăng ký) -->
+  <div id="auth-modal" class="auth-modal" aria-hidden="true" role="dialog" aria-label="Tài khoản">
+    <div class="auth-modal-backdrop" data-close-auth></div>
+    <div class="auth-modal-panel">
+      <button type="button" class="auth-close" data-close-auth aria-label="Đóng"><i class="fa-solid fa-xmark"></i></button>
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab is-active" data-auth-tab="login">Đăng nhập</button>
+        <button type="button" class="auth-tab" data-auth-tab="register">Đăng ký</button>
+      </div>
+      <form id="auth-form-login" class="auth-form" data-auth-form="login" novalidate>
+        <div class="auth-field">
+          <label for="login-email">Email</label>
+          <input id="login-email" type="email" name="email" placeholder="ban@email.com" autocomplete="email" />
+          <span class="auth-error" data-error-for="login-email"></span>
+        </div>
+        <div class="auth-field">
+          <label for="login-password">Mật khẩu</label>
+          <input id="login-password" type="password" name="password" placeholder="••••••••" autocomplete="current-password" />
+          <span class="auth-error" data-error-for="login-password"></span>
+        </div>
+        <button type="submit" class="auth-submit">Đăng nhập</button>
+      </form>
+      <form id="auth-form-register" class="auth-form hidden" data-auth-form="register" novalidate>
+        <div class="auth-field">
+          <label for="register-email">Email</label>
+          <input id="register-email" type="email" name="email" placeholder="ban@email.com" autocomplete="email" />
+          <span class="auth-error" data-error-for="register-email"></span>
+        </div>
+        <div class="auth-field">
+          <label for="register-password">Mật khẩu</label>
+          <input id="register-password" type="password" name="password" placeholder="Tối thiểu 6 ký tự" autocomplete="new-password" />
+          <span class="auth-error" data-error-for="register-password"></span>
+        </div>
+        <div class="auth-field">
+          <label for="register-confirm">Xác nhận mật khẩu</label>
+          <input id="register-confirm" type="password" name="confirm" placeholder="Nhập lại mật khẩu" autocomplete="new-password" />
+          <span class="auth-error" data-error-for="register-confirm"></span>
+        </div>
+        <button type="submit" class="auth-submit">Đăng ký</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast (góc dưới màn hình) -->
+  <div id="toast" class="toast toast--success" role="status" aria-live="polite">
+    <i id="toast-icon" class="fa-solid fa-circle-check"></i>
+    <span id="toast-msg"></span>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
